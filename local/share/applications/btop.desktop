@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=btop
+GenericName=Monitor do Sistema
+Comment=CPU, memória, disco, rede e processos
+Keywords=monitor;sistema;cpu;ram;memoria;processos;task;manager;
+Exec=xdg-terminal-exec --app-id=TUI.float -e btop
+Icon=btop
+Terminal=false
+Categories=System;Monitor;

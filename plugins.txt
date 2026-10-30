@@ -1,0 +1,4 @@
+bobbynicholas.omaland https://github.com/bobby-nicholas/omaland.git
+crmne.mpris https://github.com/crmne/omarchy-mpris.git
+io.github.alexmirkovic99-hue.system-stats https://github.com/alexmirkovic99-hue/omarchy-system-stats.git
+omaplug https://github.com/fross100/omaplug.git

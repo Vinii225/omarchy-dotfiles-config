@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Discord
+Exec=uwsm-app -- firefox --new-window https://discord.com/channels/@me
+Terminal=false
+Type=Application
+Icon=omarchy-discord
+StartupNotify=true
