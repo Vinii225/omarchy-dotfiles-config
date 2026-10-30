@@ -30,19 +30,24 @@
           "id": "omarchy.workspaces"
         },
         {
-          "id": "crmne.mpris",
           "adaptiveLayout": true,
           "albumArtSize": 20,
+          "id": "crmne.mpris",
+          "maxCharacters": 50,
+          "maxLabelWidth": 400,
           "showAlbumArt": true,
           "showArtist": true,
-          "showControls": true,
-          "maxCharacters": 50,
-          "maxLabelWidth": 400
+          "showControls": true
         }
       ],
       "right": [
         {
           "id": "omarchy.tray"
+        },
+        {
+          "collapsed": false,
+          "id": "io.github.alexmirkovic99-hue.system-stats",
+          "palette": "system"
         },
         {
           "autoCheckUpdates": true,
@@ -65,17 +70,15 @@
         },
         {
           "id": "omarchy.power"
-        },
-        {
-          "id": "io.github.alexmirkovic99-hue.system-stats",
-          "palette": "system",
-          "collapsed": false
         }
       ]
     },
     "position": "top",
     "transparent": true
   },
+  "disabledPlugins": [
+    "omarchy.battery"
+  ],
   "idle": {
     "lock": 300,
     "screensaver": 150
@@ -83,10 +86,10 @@
   "plugins": [
     {
       "id": "bobbynicholas.omaland"
+    },
+    {
+      "id": "io.github.smoothpixels.cursor-accent"
     }
   ],
-  "version": 1,
-  "disabledPlugins": [
-    "omarchy.battery"
-  ]
+  "version": 1
 }
