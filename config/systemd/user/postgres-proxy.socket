@@ -1,0 +1,10 @@
+[Unit]
+Description=Porta 5432 que liga o postgres18 sob demanda
+
+[Socket]
+ListenStream=127.0.0.1:5432
+ListenStream=[::1]:5432
+BindIPv6Only=ipv6-only
+
+[Install]
+WantedBy=sockets.target

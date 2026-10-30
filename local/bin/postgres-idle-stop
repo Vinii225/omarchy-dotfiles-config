@@ -1,0 +1,12 @@
+#!/bin/bash
+# Desliga o postgres18 depois de 3 checagens seguidas (~15 min) sem nenhuma conexão
+state="$HOME/.cache/postgres-idle-count"
+docker ps -q --filter name=^postgres18$ | grep -q . || { rm -f "$state"; exit 0; }
+conns=$(docker exec postgres18 psql -U postgres -tAc \
+  "select count(*) from pg_stat_activity where backend_type='client backend' and pid<>pg_backend_pid()" 2>/dev/null)
+if [ "$conns" = "0" ]; then
+  n=$(( $(cat "$state" 2>/dev/null || echo 0) + 1 ))
+  if [ "$n" -ge 3 ]; then systemctl --user stop postgres-proxy.service; docker stop postgres18 >/dev/null; rm -f "$state"; else echo "$n" > "$state"; fi
+else
+  rm -f "$state"
+fi

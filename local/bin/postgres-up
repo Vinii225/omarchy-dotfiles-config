@@ -1,0 +1,8 @@
+#!/bin/bash
+# Liga o postgres18 e espera ele aceitar conexões
+docker start postgres18 >/dev/null || exit 1
+for i in $(seq 1 120); do
+  docker exec postgres18 pg_isready -U postgres -q && exit 0
+  sleep 0.5
+done
+exit 1

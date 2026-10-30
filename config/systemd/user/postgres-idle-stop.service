@@ -1,0 +1,6 @@
+[Unit]
+Description=Desliga o postgres18 quando ocioso
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/postgres-idle-stop

@@ -16,6 +16,11 @@ cp ~/.config/starship.toml config/
 $R --exclude='claude-code-url-handler.desktop' --include='*.desktop' --exclude='*' \
   ~/.local/share/applications/ local/share/applications/
 
+mkdir -p local/bin local/share/icons config/systemd/user
+for f in pgadmin postgres-up postgres-idle-stop; do cp ~/.local/bin/$f local/bin/; done
+cp ~/.local/share/icons/pgadmin.png local/share/icons/
+cp ~/.config/systemd/user/postgres-* config/systemd/user/
+
 for d in ~/.config/omarchy/plugins/*/; do
   url=$(git -C "$d" remote get-url origin 2>/dev/null) && echo "$(basename "$d") $url"
 done > plugins.txt

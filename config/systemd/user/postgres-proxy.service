@@ -1,0 +1,9 @@
+[Unit]
+Description=Liga o postgres18 e repassa as conexões da porta 5432
+Requires=postgres-proxy.socket
+After=postgres-proxy.socket
+
+[Service]
+ExecStartPre=%h/.local/bin/postgres-up
+ExecStart=/usr/lib/systemd/systemd-socket-proxyd --exit-idle-time=5min 127.0.0.1:15432
+TimeoutStartSec=90

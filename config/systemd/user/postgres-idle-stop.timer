@@ -1,0 +1,9 @@
+[Unit]
+Description=Checa a cada 5 min se o postgres18 está ocioso
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target

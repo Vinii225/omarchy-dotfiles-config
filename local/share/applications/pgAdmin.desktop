@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=pgAdmin
+Comment=Administração do PostgreSQL
+Exec=/home/ares/.local/bin/pgadmin
+Terminal=false
+Type=Application
+Icon=/home/ares/.local/share/icons/pgadmin.png
+Categories=Development;Database;
+StartupNotify=true

@@ -1,0 +1,10 @@
+#!/bin/bash
+# Liga o pgAdmin, abre o pgAdmin como app e desliga o pgAdmin ao fechar a janela
+docker start pgadmin >/dev/null 2>&1
+for i in $(seq 1 60); do
+  curl -s -o /dev/null http://127.0.0.1:5050/ && break
+  sleep 0.5
+done
+# Perfil próprio para o Chromium ficar aberto até a janela do pgAdmin ser fechada
+chromium --app=http://127.0.0.1:5050/ --user-data-dir="$HOME/.local/share/pgadmin-chromium" --class=pgAdmin
+docker stop pgadmin >/dev/null 2>&1
